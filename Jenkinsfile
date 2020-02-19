@@ -14,6 +14,14 @@ spec:
     image: danielrmartin/sko:1.2
     command: ['cat']
     tty: true
+    volumeMounts:
+      - name: maven-cache
+        mountPath: /root/.m2/repository
+  volumes:
+    - name: maven-cache
+      hostPath:
+        path: /tmp
+        type: Directory
 """
     }
   }
