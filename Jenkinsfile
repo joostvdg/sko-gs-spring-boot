@@ -36,9 +36,9 @@ spec:
       script {
         if (params.FLOW_CONTEXT == 'deploy') {
           step([$class: 'ElectricFlowPipelinePublisher',
-            configuration: 'stu-server',
-            projectName: 'StuSKO',
-            pipelineName: 'StuPL',
+            configuration: 'joost-server',
+            projectName: 'MyAwesomeProject',
+            pipelineName: 'MyAwesomePipeline',
             addParam: '{"pipeline":{"pipelineName":"flow-sko-uc-1","parameters":"[{\\\"parameterName\\\": \\\"jenkinsJobName\\\", \\\"parameterValue\\\": \\\"'+"${env.JOB_NAME}"+'\\\"},{\\\"parameterName\\\": \\\"jenkinsBuildNumber\\\", \\\"parameterValue\\\": \\\"'+"${env.BUILD_NUMBER}"+'\\\"}]"}}'
           ])
         }
